@@ -434,7 +434,7 @@ namespace ChloniumUI
                         continue;
                     }
 
-                    var login = new Login
+                    Login login = new Login
                     {
                         origin_url = reader.GetString(0),
                         action_url = reader.GetString(1),
@@ -444,25 +444,24 @@ namespace ChloniumUI
                         password_value = encrypted_value,
                         submit_element = reader.GetString(6),
                         signon_realm = reader.GetString(7),
-                        preferred = reader.GetInt32(8),
-                        date_created = reader.GetInt32(9),
-                        blacklisted_by_user = reader.GetInt32(10),
-                        scheme = reader.GetInt32(11),
-                        password_type = reader.GetInt32(12),
-                        times_used = reader.GetInt32(13),
+                        date_created = reader.GetInt32(8),
+                        blacklisted_by_user = reader.GetInt32(9),
+                        scheme = reader.GetInt32(10),
+                        password_type = reader.GetInt32(11),
+                        times_used = reader.GetInt32(12),
                         form_data = (byte[])reader["form_data"],
-                        date_synced = reader.GetInt32(15),
-                        display_name = reader.GetString(16),
-                        icon_url = reader.GetString(17),
-                        federation_url = reader.GetString(18),
-                        skip_zero_click = reader.GetInt32(19),
-                        generation_upload_status = reader.GetInt32(20),
+                        date_synced = reader.GetInt32(14),
+                        display_name = reader.GetString(15),
+                        icon_url = reader.GetString(16),
+                        federation_url = reader.GetString(17),
+                        skip_zero_click = reader.GetInt32(18),
+                        generation_upload_status = reader.GetInt32(19),
                         possible_username_pairs = (byte[])reader["possible_username_pairs"],
-                        id = reader.GetInt32(22),
-                        date_last_used = reader.GetInt32(23),
+                        id = reader.GetInt32(21),
+                        date_last_used = reader.GetInt32(22),
                         moving_blocked_for = (byte[])reader["moving_blocked_for"],
                         decrypted_password_value = decrypted_value
-                    };
+                    };                   
                     items.Add(login);
                 }
             }
